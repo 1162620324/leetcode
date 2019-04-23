@@ -1,16 +1,9 @@
 package coding;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.Set;
 
-public class practice {
-
-	public static void main(String[] args) {
-		String s = "abcabcdeabc";
-		
-		System.out.println(lengthOfLongestSubstring(s));
-	}
-
-	
+public class Leetcode3_lengthOfLongestSubstring {
 	public static int lengthOfLongestSubstring(String s) {
 		int i = 0, j = 0;
 		int longest = 0;
@@ -39,5 +32,4 @@ public class practice {
 		}
 		return longest;
 	}
-	
 }
