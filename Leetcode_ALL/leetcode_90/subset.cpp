@@ -8,6 +8,7 @@
 
 using namespace std;
 
+void helper(vector<vector<int>> &res, vector<int> & out, int pos, vector<int> nums);
 
 vector<vector<int>> subsetsWithDup(vector<int>& nums) {
     vector<vector<int>> res(1);
@@ -45,11 +46,9 @@ void helper(vector<vector<int>> &res, vector<int> & out, int pos, vector<int> nu
         out.push_back(nums[i]);
         helper(res, out, i+1, nums);
         out.pop_back();
-        while(i+1 < nums.size() && S[i] == S[i+1]) i++;
+        while(i+1 < nums.size() && nums[i] == nums[i+1]) i++;
     }
 }
-
-
 
 int main(){
     vector<int> n = {1,2,2};
