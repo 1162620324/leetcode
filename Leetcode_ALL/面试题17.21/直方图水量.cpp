@@ -44,7 +44,7 @@ int trap_dp(vector<int>& height) {
     while(left < right){
         leftmax = max(leftmax, height[left]);
         rightmax = max(rightmax, height[right]);
-        if(leftmax <= rightmax){
+        if(leftmax <= rightmax){ 
             res += (leftmax - height[left]);
             left++;
         }

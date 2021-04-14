@@ -8,6 +8,26 @@
 
 using namespace std;
 
+
+
+
+
+int main(){
+    int n;
+    cin >> n;
+    vector<vector<int>> num(n, vector<int>(n));
+
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < n; i++){
+            cin >> num[i][j];
+        }
+    }
+
+
+}
+
+
+
 //dp[i][j]表示s(0~i-1)和s(0~j-1)最长的公共子序列
 //状态转移方程：
 //dp[i][j] = max(dp[i-1][j],dp[i][j-1], dp[i-1][j-1]+1])   if s[i-1] == s[j-1]
@@ -33,7 +53,4 @@ int longestCommonSubsequence(string text1, string text2) {
     return dp[m][n];
 }
 
-int main(){
-    string text1 = "abcde", text2 = "ace";
-    cout << longestCommonSubsequence(text1, text2);
-}
+
