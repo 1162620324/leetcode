@@ -8,6 +8,9 @@
 
 using namespace std;
 
+
+//动态规划
+
 int nuDecodings(string s){
     int n = s.size();
     vector<int> f(n+1);
