@@ -103,3 +103,77 @@ int binary_search(int l, int r){
     return l;
 }
 
+
+//高精度加法
+vector<int> add(vector<int> &A, vector<int> &B)
+{
+    vector<int> res;
+
+    int t = 0;
+    for (int i = 0; i < A.size() || i < B.size(); i ++)
+    {
+        if (i < A.size()) t += A[i];
+        if (i < B.size()) t += B[i];
+        res.push_back(t % 10);
+        t /= 10;
+    }
+
+    if (t) res.push_back(t);
+    return res;
+}
+
+//高精度减法
+vector<int> sub(vector<int> &A, vector<int> &B)
+{
+    vector<int> res;
+
+    int t = 0;
+    for (int i = 0; i < A.size(); i ++)
+    {
+        t = A[i] - t;
+        if (i < B.size()) t = t - B[i];
+        res.push_back((t + 10) % 10);
+        if (t < 10) t = 1;
+        else t = 0;
+    }
+
+    while (res.size() > 1 && res.back() == 0) res.pop_back();
+    return res;
+}
+
+//高精度乘法
+vector<int> multi(vector<int> &A, int b)
+{
+    vector<int> res;
+    
+    int t = 0;
+    for (int i = 0; i < A.size() || t != 0; i ++)
+    {
+        if (i < A.size()) t = A[i] * b + t;
+        res.push_back((t % 10));
+        t /= 10;
+    }
+
+    while (res.size() > 1 && res.back() == 0) res.pop_back();
+    return res;
+}
+
+//高精度除法
+vector<int> div(vector<int> &A, int b)
+{
+    vector<int> res;
+    int r = 0;
+
+    for (int i = A.size() - 1; i >= 0; i ++) 
+    {
+        r = r * 10 + A[i];
+        res.push_back(r / b);
+        r %= b;
+    }
+
+    reverse(res.begin(), res.end());
+    while (res.size() > 1 && res.back() != 0) res.pop_back();
+
+    return res;
+}
+
