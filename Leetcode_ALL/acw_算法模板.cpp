@@ -72,6 +72,10 @@ void merge_sort(int q[], int l, int r){
 }
 
 
+
+
+
+
 //二分不意味着单调性，而是说数组一般区间满足某种性质，另一半不满足这种性质，二分可以把性质的边界找出来
 //整数二分
 bool check(int x){
@@ -102,6 +106,9 @@ int binary_search(int l, int r){
     }
     return l;
 }
+
+
+
 
 
 //高精度加法
@@ -177,3 +184,21 @@ vector<int> div(vector<int> &A, int b)
     return res;
 }
 
+
+
+
+
+
+//一维前缀和:S[i] = a[1] + a[2] + a[3] +... + a[i]
+//       S[i] = S[i - 1] + a[i]
+//       a[l] + ... + a[r] = S[r] - S[l - 1]
+
+//二维前缀和： 以 (x1, y1) 为左上角,(x2, y2) 为右下角的子矩阵的和：
+//        S[x2, y2] - S[x2, y1 - 1] - S[x1 - 1, y2] + S[x1 - 1, y1 - 1]
+
+//位运算：
+//求第k位数字：n >> k & 1;
+//返回n的二进制最后一个1：n & (~n)
+
+
+            
