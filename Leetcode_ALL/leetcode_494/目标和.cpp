@@ -51,7 +51,7 @@ int findTargetSumWays(vector<int>& nums, int target) {
     dp[0][0] = 1;
     for (int i = 1; i <= n; i ++)
     {
-        int num = num[i - 1];
+        int num = nums[i - 1];
         for (int j = 0; j <= neg; j ++)
         {
             dp[i][j] = dp[i - 1][j];
