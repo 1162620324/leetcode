@@ -1,12 +1,12 @@
-#include <iostream>
-#include <string>
-#include <vector>
-#include <map>
-#include <cmath>
-#include <algorithm>
-#include <set>
+    #include <iostream>
+    #include <string>
+    #include <vector>
+    #include <map>
+    #include <cmath>
+    #include <algorithm>
+    #include <set>
 
-using namespace std;
+    using namespace std;
 
 vector<int> getNext(string p){
     vector<int> pi(p.size());
